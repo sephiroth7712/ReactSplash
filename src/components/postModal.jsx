@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
 import UnsplashImage from "./unsplashImage";
+import "./postModal.css";
 const Modal = ({ handleClose, show, content, index }) => {
   const showHideClassName =
     show === index ? "modal display-block" : "modal display-none";
@@ -17,8 +18,13 @@ const Modal = ({ handleClose, show, content, index }) => {
             bordered={false}
             showPost={null}
           />
-          <button className="modal-button" onClick={handleClose}>
-            close
+          <button
+            type="button"
+            className="modal-button"
+            onClick={handleClose}
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
           </button>
         </section>
       </div>

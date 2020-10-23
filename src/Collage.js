@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import loading from "./loading.gif";
+import loading from "./assets/loading.gif";
 import "./App.css";
 import InfiniteScroll from "react-infinite-scroll-component";
 import UnsplashImage from "./components/unsplashImage";
@@ -18,6 +18,7 @@ let Collage = () => {
     setShow(-1);
   };
   const fetchImages = () => {
+    // Access keys provided for preview purposes
     const apiRoot = "https://api.unsplash.com";
     const accessKey = "t399RRtebCtVr_arrzNshV3xF9cXaviuCkmR-zbC1RA";
 
@@ -39,12 +40,6 @@ let Collage = () => {
     <div className="hero is-fullheight is-bold is-info">
       <div className="hero-body">
         <div className="container">
-          {/* <div className="header content">
-            <h2 className="subtitle is-6">Code Challenge #16</h2>
-            <h1 className="title is-1">
-              Infinite Scroll Unsplash Code Challenge
-            </h1>
-          </div> */}
           <InfiniteScroll
             dataLength={images}
             next={() => fetchImages()}
