@@ -10,6 +10,7 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
 .image {
   -webkit-box-flex: 1;
   -ms-flex: 1 1 auto;
@@ -29,6 +30,11 @@
 .user-details > * {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  text-overflow: ellipsis;
+  max-lines: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
 }
 .user-avatar {
   height: 2rem;
@@ -50,4 +56,7 @@
 .likes-icon {
   height: 2rem;
   width: 2rem;
+}
+.username {
+  color: #cf8740;
 }

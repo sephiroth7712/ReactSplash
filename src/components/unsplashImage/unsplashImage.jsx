@@ -19,13 +19,13 @@ const UnsplashImage = ({
     onClick={showPost}
   >
     <div className="user-details">
-      Posted by{" "}
       <img
         alt="user profile pic"
         className="user-avatar"
         src={profilePicture}
       />
-      {"@" + username} <TimeAgo date={created_at} />
+      <span className="username">{"@" + username}</span> •{" "}
+      <TimeAgo date={created_at} />
     </div>
     <div className={"caption" + (bordered === true ? " cardview" : "")}>
       {desc == null ? "N/A" : desc}

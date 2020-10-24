@@ -7,7 +7,7 @@ import "./postModal.css";
 const Modal = ({ handleClose, show, image, index }) => {
   const showHideClassName =
     show === index ? "modal display-block" : "modal display-none";
-
+  console.log(image);
   return ReactDom.createPortal(
     <>
       <div className={showHideClassName}>
