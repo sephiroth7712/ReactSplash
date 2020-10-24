@@ -2,7 +2,10 @@ import React from "react";
 import ReactDom from "react-dom";
 import UnsplashImage from "./unsplashImage";
 import "./postModal.css";
-const Modal = ({ handleClose, show, content, index }) => {
+
+// Component for displaying specific image post as a modal
+const Modal = ({ handleClose, show, image, index }) => {
+  console.log(image);
   const showHideClassName =
     show === index ? "modal display-block" : "modal display-none";
 
@@ -11,10 +14,12 @@ const Modal = ({ handleClose, show, content, index }) => {
       <div className={showHideClassName}>
         <section className="modal-main">
           <UnsplashImage
-            url={content.urls.regular}
-            index={null}
-            key={null}
-            desc={content.alt_description}
+            url={image.urls.regular}
+            username={image.user.username}
+            profilePicture={image.user.profile_image.small}
+            desc={image.description || image.alt_description}
+            created_at={image.created_at}
+            likes={image.likes}
             bordered={false}
             showPost={null}
           />

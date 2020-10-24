@@ -10,15 +10,20 @@ let Collage = () => {
     fetchImages();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // showing a modal post
   const showPost = (index) => {
     setShow(index);
   };
 
+  // hiding a modal post
   const hidePost = () => {
     setShow(-1);
   };
+
+  // Fetching list of images from unsplash api
   const fetchImages = () => {
-    // Access keys provided for preview purposes
+    // Access keys provided for preview purposes, real world scenarios will instead involve environment variables
     const apiRoot = "https://api.unsplash.com";
     const accessKey = "t399RRtebCtVr_arrzNshV3xF9cXaviuCkmR-zbC1RA";
 
@@ -32,6 +37,7 @@ let Collage = () => {
         setPage(page + 1);
       });
   };
+  // Initialising state
   const [images, setImages] = React.useState([]);
   const [loaded, setIsLoaded] = React.useState(false);
   const [page, setPage] = React.useState(1);
@@ -50,20 +56,22 @@ let Collage = () => {
               <div className="cards">
                 {loaded
                   ? images.map((image, index) => (
-                      <div>
+                      <div key={image.id + index}>
                         <Modal
                           show={show}
                           handleClose={hidePost}
-                          content={image}
-                          key={index}
+                          image={image}
                           index={index}
                         />
                         <UnsplashImage
                           url={image.urls.regular}
                           index={index}
-                          key={index}
-                          desc={image.alt_description}
+                          username={image.user.username}
+                          profilePicture={image.user.profile_image.small}
+                          desc={image.description || image.alt_description}
+                          created_at={image.created_at}
                           bordered={true}
+                          likes={image.likes}
                           showPost={() => showPost(index)}
                         />
                       </div>

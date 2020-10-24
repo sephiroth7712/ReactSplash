@@ -45,6 +45,8 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+This project utilises [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component)
+
 ### Code Splitting
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
