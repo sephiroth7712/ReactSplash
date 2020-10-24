@@ -1,6 +1,6 @@
 import React from "react";
 import TimeAgo from "react-timeago";
-import likesIcon from "../assets/heart.png";
+import likesIcon from "../../assets/heart.png";
 import "./unsplashImage.css";
 
 // Component to display images and caption

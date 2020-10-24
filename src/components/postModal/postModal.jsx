@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import UnsplashImage from "./unsplashImage";
+import UnsplashImage from "../unsplashImage/unsplashImage";
 import "./postModal.css";
 
 // Component for displaying specific image post as a modal
