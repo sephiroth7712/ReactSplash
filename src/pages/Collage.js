@@ -29,7 +29,7 @@ let Collage = () => {
 
     axios
       .get(
-        `${apiRoot}/photos?page=${page}&client_id=${accessKey}&per_page=5&order_by=latest`
+        `${apiRoot}/photos?page=${page}&client_id=${accessKey}&per_page=20&order_by=latest`
       )
       .then((res) => {
         setImages([...images, ...res.data]);

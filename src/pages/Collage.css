@@ -1,15 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap");
 html,
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 auto;
+  display: block;
+  margin: auto;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  width: 100%;
+  width: 90vw;
   line-height: 1.5;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -38,20 +36,26 @@ body {
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
 }
-
 .cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
   width: 100%;
   height: 100%;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
+  display: grid;
+  gap: 1rem;
+}
+@media only screen and (max-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+@media only screen and (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 .cards .card {
   align-items: center;
@@ -67,13 +71,9 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-flow: column;
   flex-flow: column;
-  margin-top: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  max-width: 50rem;
-  max-height: 50rem;
-  min-width: auto;
+  /* margin: 1rem; */
+  /* max-width: 450px;
+  max-height: 450px; */
 }
 .bordered {
   border-style: solid;

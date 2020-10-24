@@ -5,7 +5,6 @@ import "./postModal.css";
 
 // Component for displaying specific image post as a modal
 const Modal = ({ handleClose, show, image, index }) => {
-  console.log(image);
   const showHideClassName =
     show === index ? "modal display-block" : "modal display-none";
 

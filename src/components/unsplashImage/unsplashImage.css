@@ -21,8 +21,14 @@
 }
 .user-details {
   color: #818384;
+  display: flex;
   font-size: 1.5rem;
   align-self: flex-start;
+  align-items: center;
+}
+.user-details > * {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .user-avatar {
   height: 2rem;
@@ -31,9 +37,15 @@
 }
 .likes {
   color: #818384;
+  display: flex;
   font-size: 1.5rem;
   align-self: flex-start;
   padding-top: 1rem;
+  align-items: center;
+}
+.likes > * {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .likes-icon {
   height: 2rem;

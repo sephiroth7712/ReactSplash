@@ -25,7 +25,7 @@ const UnsplashImage = ({
         className="user-avatar"
         src={profilePicture}
       />
-      {" @" + username} <TimeAgo date={created_at} />
+      {"@" + username} <TimeAgo date={created_at} />
     </div>
     <div className={"caption" + (bordered === true ? " cardview" : "")}>
       {desc == null ? "N/A" : desc}
@@ -37,7 +37,7 @@ const UnsplashImage = ({
     />
     <div className="likes">
       <img alt="" className="likes-icon" src={likesIcon} />
-      {" " + likes}
+      {likes}
     </div>
   </div>
 );
