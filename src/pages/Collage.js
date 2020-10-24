@@ -1,10 +1,10 @@
 import React from "react";
 import axios from "axios";
-import loading from "./assets/loading.gif";
-import "./App.css";
+import loading from "../assets/loading.gif";
+import "./Collage.css";
 import InfiniteScroll from "react-infinite-scroll-component";
-import UnsplashImage from "./components/unsplashImage";
-import Modal from "./components/postModal";
+import UnsplashImage from "../components/unsplashImage";
+import Modal from "../components/postModal";
 let Collage = () => {
   React.useEffect(() => {
     fetchImages();

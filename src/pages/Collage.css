@@ -15,13 +15,7 @@ body {
   box-shadow: none;
   font-size: 62.5%;
   background-color: black;
-  -ms-overflow-style: none;
   color: white;
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
 }
 
 .container {

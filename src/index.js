@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import Collage from "./Collage";
+import Collage from "./pages/Collage";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(<Collage />, document.getElementById("root"));

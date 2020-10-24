@@ -27,7 +27,9 @@ const UnsplashImage = ({
       />
       {" @" + username} <TimeAgo date={created_at} />
     </div>
-    <div className="caption">{desc == null ? "N/A" : desc}</div>
+    <div className={"caption" + (bordered === true ? " cardview" : "")}>
+      {desc == null ? "N/A" : desc}
+    </div>
     <img
       className={"image" + (bordered === false ? "-modal" : "")}
       src={url}
