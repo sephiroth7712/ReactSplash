@@ -5,6 +5,7 @@ import "./Collage.css";
 import InfiniteScroll from "react-infinite-scroll-component";
 import UnsplashImage from "../components/unsplashImage";
 import Modal from "../components/postModal";
+import ScrollToTop from "../components/scrollToTop";
 let Collage = () => {
   React.useEffect(() => {
     fetchImages();
@@ -43,45 +44,42 @@ let Collage = () => {
   const [page, setPage] = React.useState(1);
   const [show, setShow] = React.useState(-1);
   return (
-    <div className="hero is-fullheight is-bold is-info">
-      <div className="hero-body">
+    <div className="container">
+      <ScrollToTop />
+      <InfiniteScroll
+        dataLength={images}
+        next={() => fetchImages()}
+        hasMore={true}
+        loader={<img src={loading} alt="loading" className="loader" />}
+      >
         <div className="container">
-          <InfiniteScroll
-            dataLength={images}
-            next={() => fetchImages()}
-            hasMore={true}
-            loader={<img src={loading} alt="loading" className="loader" />}
-          >
-            <div className="container">
-              <div className="cards">
-                {loaded
-                  ? images.map((image, index) => (
-                      <div key={image.id + index}>
-                        <Modal
-                          show={show}
-                          handleClose={hidePost}
-                          image={image}
-                          index={index}
-                        />
-                        <UnsplashImage
-                          url={image.urls.regular}
-                          index={index}
-                          username={image.user.username}
-                          profilePicture={image.user.profile_image.small}
-                          desc={image.description || image.alt_description}
-                          created_at={image.created_at}
-                          bordered={true}
-                          likes={image.likes}
-                          showPost={() => showPost(index)}
-                        />
-                      </div>
-                    ))
-                  : ""}
-              </div>
-            </div>
-          </InfiniteScroll>
+          <div className="cards">
+            {loaded
+              ? images.map((image, index) => (
+                  <div key={image.id + index}>
+                    <Modal
+                      show={show}
+                      handleClose={hidePost}
+                      image={image}
+                      index={index}
+                    />
+                    <UnsplashImage
+                      url={image.urls.regular}
+                      index={index}
+                      username={image.user.username}
+                      profilePicture={image.user.profile_image.small}
+                      desc={image.description || image.alt_description}
+                      created_at={image.created_at}
+                      bordered={true}
+                      likes={image.likes}
+                      showPost={() => showPost(index)}
+                    />
+                  </div>
+                ))
+              : ""}
+          </div>
         </div>
-      </div>
+      </InfiniteScroll>
     </div>
   );
 };

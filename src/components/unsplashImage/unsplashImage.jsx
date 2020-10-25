@@ -27,7 +27,10 @@ const UnsplashImage = ({
       <span className="username">{"@" + username}</span> •{" "}
       <TimeAgo date={created_at} />
     </div>
-    <div className={"caption" + (bordered === true ? " cardview" : "")}>
+    <div
+      title={desc == null ? "N/A" : desc}
+      className={"caption" + (bordered === true ? " cardview" : "")}
+    >
       {desc == null ? "N/A" : desc}
     </div>
     <img

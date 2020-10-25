@@ -6,6 +6,7 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: 1000;
+  display: block;
 }
 
 .modal-main {
@@ -22,14 +23,6 @@
   border-style: solid;
   border-width: 2px;
   border-color: white;
-}
-
-.display-block {
-  display: block;
-}
-
-.display-none {
-  display: none;
 }
 .modal-button {
   position: fixed;
@@ -51,5 +44,5 @@
 .image-modal {
   padding-top: 1rem;
   max-width: 100%;
-  max-height: 60rem;
+  max-height: 50rem;
 }
