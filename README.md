@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This web app displays images pulled from Unsplash API in an infinitely loading grid.
+Details shown for each post include: the image, the description(caption), user details, time at which the picture was posted and the number of likes on the picture.
+
+Note: The heart symbol (below each image) is purely for decorative purposes to show the number of likes on a post and is not a button to "like" an image.
+
 ## Available Scripts
 
 In the project directory, you can run:
